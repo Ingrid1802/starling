@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	base: '/starling/',
-	output: 'docs',
+	outDir: './docs',
 	integrations: [
 		starlight({
 			title: 'OpenSR test',
