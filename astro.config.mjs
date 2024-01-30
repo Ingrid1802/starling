@@ -15,11 +15,11 @@ export default defineConfig({
 				{
 					label: 'Home',
 					items: [
-						{ label: 'Home', link: '/starling/home/home' },
-						{ label: 'Contributing', link: '/starling/home/contributing' },
-						{ label: 'Code of Conduct', link: '/starling/home/code_of_conduct' },
-						{ label: 'Changelog', link: '/starling/home/changelog' },
-						{ label: 'License', link: '/starling/home/license' },
+						{ label: 'Home', link: './starling/home/home' },
+						{ label: 'Contributing', link: './starling/home/contributing' },
+						{ label: 'Code of Conduct', link: './starling/home/code_of_conduct' },
+						{ label: 'Changelog', link: './starling/home/changelog' },
+						{ label: 'License', link: './starling/home/license' },
 					],
 				},
 				{
