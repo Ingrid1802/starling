@@ -68,7 +68,7 @@ export default defineConfig({
 				{
 					label: 'Benchmark',
 					items: [
-						{ label: 'Benchmark', link: '/starling/benchmarks/benchmarks' },
+						{ label: 'Benchmark', link: './benchmarks/benchmarks' },
 					],
 				},
 			],
