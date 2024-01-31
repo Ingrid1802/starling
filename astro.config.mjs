@@ -3,7 +3,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	base: '/starling/docs/',
+	base: '/starling/',
 	outDir: './docs',
 	integrations: [
 		starlight({
