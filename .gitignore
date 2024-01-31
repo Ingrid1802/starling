@@ -19,3 +19,370 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+
+starling
+|
+|--.astro
+|    |
+|    |-types.d.ts
+|
+|--.vscode
+|    |
+|    |-extensions.json
+|    |
+|    |-launch.json
+|
+|--docs
+|    |
+|    |-api
+|    |  |
+|    |  |-compute_method
+|    |  |       |
+|    |  |       |-index.html
+|    |  |
+|    |  |-model_parameters
+|    |  |       |
+|    |  |       |-index.html
+|    |  |
+|    |  |-results_attributes
+|    |  |       |
+|    |  |       |-index.html
+|    |  |
+|    |  |-setup_method
+|    |  |       |
+|    |  |       |-index.html
+|    |  |
+|    |  |-summary_method
+|    |          |
+|    |          |-index.html
+|    |
+|    |
+|    |
+|    |-astro
+|    |  |
+|    |  |-ec.sgewm.js
+|    |  |
+|    |  |-ec.usa2f.css
+|    |  |
+|    |  |-hoisted.t_XPY1dV.js
+|    |  |
+|    |  |-houston.mWcgn-6f_tlCt2.webp
+|    |  |
+|    |  |-index.XWcNq7oi.css
+|    |  |
+|    |  |-page.X_0NJa-z.js
+|    |  |
+|    |  |-Tabs.astro_astro_type_script_index_0_lang.YYQMiWOA.js
+|    |  |
+|    |  |-ui-core.H8mq0QJs.js
+|    |
+|    |
+|    |
+|    |-benchmarks
+|    |  |
+|    |  |-benchmarks
+|    |          |
+|    |          |-index.html
+|    |
+|    |
+|    |
+|    |-dataset
+|    |  |
+|    |  |-home
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-naip
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-spot
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-venµs
+|    |     |
+|    |     |-index.html
+|    |
+|    |
+|    |
+|    |-examples
+|    |  |
+|    |  |-create_correctness_animation
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-diffuser_models
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-multi_image_sr_model
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-pytorch_models
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-tensorflow_models
+|    |     |
+|    |     |-index.html
+|    |
+|    |-home
+|    |  |
+|    |  |-changelog
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-code_of_conduct
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-contributing
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-home
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-license
+|    |     |
+|    |     |-index.html
+|    |
+|    |
+|    |
+|    |-metrics
+|    |  |
+|    |  |
+|    |  |-consistency
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-correctness
+|    |  |  |
+|    |  |  |-index.html
+|    |  |
+|    |  |-distance
+|    |     |
+|    |     |-index.html
+|    |
+|    |
+|    |
+|    |-properties
+|    |  |
+|    |  |-main
+|    |     |
+|    |     |-index.html
+|    |
+|    |-404.html
+|    |
+|    |-favicon.svg
+|    |
+|    |-index.html
+|
+|
+|
+|--imgs
+|   |
+|   |-(aca estan las imagenes)
+|
+|--node_modules
+|
+|--pagefind
+|    |
+|    |-fragment
+|    |    |
+|    |    |-en_1b99674.pf_fragment
+|    |    |
+|    |    |-en_2d2c3fa.pf_fragment
+|    |    |
+|    |    |-en_4b498cb.pf_fragment
+|    |    |
+|    |    |-en_5bd01cd.pf_fragment
+|    |    |
+|    |    |-en_6afcac5.pf_fragment
+|    |    |
+|    |    |-en_8d815db.pf_fragment
+|    |    |
+|    |    |-en_10b4ddf.pf_fragment
+|    |    |
+|    |    |-en_25cb7b4.pf_fragment
+|    |    |
+|    |    |-en_27d0e4b.pf_fragment
+|    |    |
+|    |    |-en_44dc785.pf_fragment
+|    |    |
+|    |    |-en_51db3b8.pf_fragment
+|    |    |
+|    |    |-en_617c836.pf_fragment
+|    |    |
+|    |    |-en_6581e0e.pf_fragment
+|    |    |
+|    |    |-en_7018f75.pf_fragment
+|    |    |
+|    |    |-en_bdb8305.pf_fragment
+|    |    |
+|    |    |-en_c14ad55.pf_fragment
+|    |    |
+|    |    |-en_c74f906.pf_fragment
+|    |    |
+|    |    |-en_c348f28.pf_fragment
+|    |    |
+|    |    |-en_c313308.pf_fragment
+|    |    |
+|    |    |-en_ca72fcb.pf_fragment
+|    |    |
+|    |    |-en_e47fc7b.pf_fragment
+|    |    |
+|    |    |-en_eecc1c6.pf_fragment
+|    |    |
+|    |    |-en_f1c96e0.pf_fragment
+|    |    |
+|    |    |-en_f7b6a32.pf_fragment
+|    |    |
+|    |    |-en_faa12ff.pf_fragment
+|    |
+|    |
+|    |
+|    |-index
+|    |   |
+|    |   |-en_9de9d9d.pf_index
+|    |
+|    |-pagefind-entry.json
+|    |
+|    |-pagefind-highlight.js
+|    |
+|    |-pagefind-modular-ui.css
+|    |
+|    |-pagefind-modular-ui.js
+|    |
+|    |-pagefind-ui.css
+|    |
+|    |-pagefind-ui.js
+|    |
+|    |-pagefind.en_14410dfcb9.pf_meta
+|    |
+|    |-pagefind.js
+|    |
+|    |-wasm.en.pagefind
+|    |
+|    |-wasm.unknown.pagefind
+|
+|
+|
+|--public
+|   |
+|   |-favicon.svg
+|
+|--src
+|   |
+|   |-assets
+|   |   |
+|   |   |-houston.webp
+|   |   |
+|   |   |-images_opensrtest
+|   |          |
+|   |          |-aca las imagenes
+|   |
+|   |
+|   |-content
+|   |   |
+|   |   |-docs
+|   |   |  |
+|   |   |  |-api
+|   |   |  |  |
+|   |   |  |  |-compute_method.md
+|   |   |  |  |
+|   |   |  |  |-model_parameters.md
+|   |   |  |  |
+|   |   |  |  |-results_attributes.md
+|   |   |  |  |
+|   |   |  |  |-setup_method.md
+|   |   |  |  |
+|   |   |  |  |-summary_method.md
+|   |   |  |
+|   |   |  |
+|   |   |  |
+|   |   |  |-benchmarks
+|   |   |  |  |
+|   |   |  |  |-benchmarks.md
+|   |   |  |
+|   |   |  |
+|   |   |  |
+|   |   |  |-dataset
+|   |   |  |  |
+|   |   |  |  |-home.md
+|   |   |  |  |
+|   |   |  |  |-naip.md
+|   |   |  |  |
+|   |   |  |  |-spot.md
+|   |   |  |  |
+|   |   |  |  |-venµs.md
+|   |   |  |
+|   |   |  |
+|   |   |  |
+|   |   |  |-examples
+|   |   |  |  |
+|   |   |  |  |-create_correctness_animation.md
+|   |   |  |  |
+|   |   |  |  |-diffuser_models.md
+|   |   |  |  |
+|   |   |  |  |-multi_image_sr_model.md
+|   |   |  |  |
+|   |   |  |  |-pytorch_models.md
+|   |   |  |  |
+|   |   |  |  |-tensorflow_models.md
+|   |   |  |
+|   |   |  |-home
+|   |   |  |  |
+|   |   |  |  |-changelog.md
+|   |   |  |  |
+|   |   |  |  |-code_of_conduct.md
+|   |   |  |  |
+|   |   |  |  |-contributing.md
+|   |   |  |  |
+|   |   |  |  |-home.md
+|   |   |  |  |
+|   |   |  |  |-license.md
+|   |   |  |
+|   |   |  |
+|   |   |  |
+|   |   |  |-metrics
+|   |   |  |  |
+|   |   |  |  |
+|   |   |  |  |-consistency.md
+|   |   |  |  |
+|   |   |  |  |-correctness.md
+|   |   |  |  |
+|   |   |  |  |-distance.md
+|   |   |  |
+|   |   |  |
+|   |   |  |
+|   |   |  |-properties
+|   |   |  |   |
+|   |   |  |   |-main.md
+|   |   |  |
+|   |   |  |index.mdx
+|   |   |
+|   |   |-config.ts
+|   |
+|   |-env.d.ts
+|
+|--.gitignore
+|
+|--astro.config.msj
+|
+|--index.html
+|
+|--package-lock.json
+|
+|--package.json
+|
+|--README.md
+|
+|--style.css
+|
+|--tsconfig.json
+
