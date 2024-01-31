@@ -1,907 +1,379 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" data-has-toc data-has-sidebar class="astro-bguv2lll">
-
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>The NAIP product | OpenSR test</title>
-	<link rel="canonical" />
-	<link rel="shortcut icon" href="/starling/favicon.svg" type="image/svg+xml" />
-	<meta name="generator" content="Astro v4.2.4" />
-	<meta name="generator" content="Starlight v0.16.0" />
-	<meta property="og:title" content="The NAIP product" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" />
-	<meta property="og:locale" content="en" />
-	<meta property="og:description" />
-	<meta property="og:site_name" content="OpenSR test" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="The NAIP product" />
-	<meta name="twitter:description" />
-	<script>
-		window.StarlightThemeProvider = (() => {
-			const storedTheme =
-				typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
-			const theme =
-				storedTheme ||
-				(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-			document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
-			return {
-				updatePickers(theme = storedTheme || 'auto') {
-					document.querySelectorAll('starlight-theme-select').forEach((picker) => {
-						const select = picker.querySelector('select');
-						if (select) select.value = theme;
-						/** @type {HTMLTemplateElement | null} */
-						const tmpl = document.querySelector(`#theme-icons`);
-						const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
-						if (newIcon) {
-							const oldIcon = picker.querySelector('svg.label-icon');
-							if (oldIcon) {
-								oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
-							}
+<!DOCTYPE html><html lang="en" dir="ltr" data-has-toc data-has-sidebar class="astro-bguv2lll"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>The NAIP product | OpenSR test</title><link rel="canonical"/><link rel="shortcut icon" href="/starling/docs/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v4.2.4"/><meta name="generator" content="Starlight v0.16.0"/><meta property="og:title" content="The NAIP product"/><meta property="og:type" content="article"/><meta property="og:url"/><meta property="og:locale" content="en"/><meta property="og:description"/><meta property="og:site_name" content="OpenSR test"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="The NAIP product"/><meta name="twitter:description"/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
 						}
-					});
-				},
-			};
-		})();
-	</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16"
-			viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;">
-			<path
-				d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z" />
-		</svg> <svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24"
-			fill="currentColor" style="--sl-icon-size: 1em;">
-			<path
-				d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z" />
-		</svg> <svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24"
-			fill="currentColor" style="--sl-icon-size: 1em;">
-			<path
-				d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z" />
-		</svg> </template>
-	<link rel="stylesheet" href="/starling/docs/astro/index.XWcNq7oi.css" />
-	<style>
-		svg:where(.astro-c6vsoqas) {
-			color: var(--sl-icon-color);
-			font-size: var(--sl-icon-size, 1em);
-			width: 1em;
-			height: 1em
-		}
-	</style>
-	<script type="module" src="/starling/docs/astro/hoisted.t_XPY1dV.js"></script>
-	<script type="module" src="/starling/docs/astro/page.X_0NJa-z.js"></script>
-</head>
-
-<body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">Skip to content</a>
-	<div class="page sl-flex astro-vrdttmbt">
-		<header class="header astro-vrdttmbt">
-			<div class="header sl-flex astro-kmkmnagf">
-				<div class="sl-flex astro-kmkmnagf"> <a href="/starling/" class="site-title sl-flex astro-m46x6ez3"> <span
-							class="astro-m46x6ez3"> OpenSR test </span> </a> </div>
-				<div class="sl-flex astro-kmkmnagf"> <site-search data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}"
-						class="astro-v37mnknz"> <button data-open-modal disabled class="astro-v37mnknz"> <svg aria-label="Search"
-								class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
-								style="--sl-icon-size: 1em;">
-								<path
-									d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z" />
-							</svg> <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">Search</span> <svg
-								aria-label="(Press / to Search)" class="sl-hidden md:sl-block astro-v37mnknz astro-c6vsoqas" width="16"
-								height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;">
-								<path
-									d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5Zm3 15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10Z" />
-								<path d="M15.293 6.707a1 1 0 1 1 1.414 1.414l-8.485 8.486a1 1 0 0 1-1.414-1.415l8.485-8.485Z" />
-							</svg> </button>
-						<dialog style="padding:0" aria-label="Search" class="astro-v37mnknz">
-							<div class="dialog-frame sl-flex astro-v37mnknz"> <button data-close-modal
-									class="sl-flex md:sl-hidden astro-v37mnknz"> Cancel </button>
-								<div class="search-container astro-v37mnknz">
-									<div id="starlight__search" class="astro-v37mnknz"></div>
-								</div>
-							</div>
-						</dialog>
-					</site-search> </div>
-				<div class="sl-hidden md:sl-flex right-group astro-kmkmnagf">
-					<div class="sl-flex social-icons astro-kmkmnagf"> <a href="https://github.com/ESAOpenSR/opensr-test" rel="me"
-							class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true"
-								class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
-								style="--sl-icon-size: 1em;">
-								<path
-									d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z" />
-							</svg> </a> </div> <starlight-theme-select> <label style="--sl-select-width: 6.25em"
-							class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg aria-hidden="true"
-								class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24"
-								fill="currentColor" style="--sl-icon-size: 1em;">
-								<path
-									d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z" />
-							</svg> <select value="auto" class="astro-4yphtoen">
-								<option value="dark" class="astro-4yphtoen">Dark</option>
-								<option value="light" class="astro-4yphtoen">Light</option>
-								<option value="auto" selected="true" class="astro-4yphtoen">Auto</option>
-							</select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16"
-								viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;">
-								<path
-									d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z" />
-							</svg> </label> </starlight-theme-select>
-					<script>
-						StarlightThemeProvider.updatePickers();
-					</script>
-				</div>
-			</div>
-		</header>
-		<nav class="sidebar astro-vrdttmbt" aria-label="Main"> <starlight-menu-button class="astro-jif73yzw"> <button
-					aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar"
-					class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="astro-jif73yzw astro-c6vsoqas"
-						width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;">
-						<path
-							d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z" />
-					</svg> </button> </starlight-menu-button>
-			<div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt">
-				<div class="sidebar-content sl-flex astro-vrdttmbt">
-					<ul class="top-level astro-3ii7xxms">
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Home</span> </div> <svg
-										aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/home/home" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">Home</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/home/contributing" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Contributing</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/home/code_of_conduct" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Code of Conduct</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/home/changelog" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Changelog</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/home/license" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">License</span> </a> </li>
-								</ul>
-							</details>
-						</li>
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Properties</span> </div>
-									<svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/properties/main" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">main</span> </a> </li>
-								</ul>
-							</details>
-						</li>
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">API</span> </div> <svg
-										aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/api/model_parameters" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Model parameters</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/api/setup_method" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Setup method</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/api/compute_method" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Compute method</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/api/summary_method" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Summary method</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/api/results_attributes" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Results attributes</span> </a> </li>
-								</ul>
-							</details>
-						</li>
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Dataset</span> </div> <svg
-										aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/dataset/home" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">Home</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/dataset/naip" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">NAIP</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/dataset/spot" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">SPOT</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/dataset/venµs" class="astro-3ii7xxms"> <span
-												class="astro-3ii7xxms">venµs</span> </a> </li>
-								</ul>
-							</details>
-						</li>
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Metrics</span> </div> <svg
-										aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/metrics/consistency" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Consistency metrics</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/metrics/distance" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Distance metrics</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/metrics/correctness" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Correctness metrics</span> </a> </li>
-								</ul>
-							</details>
-						</li>
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Examples</span> </div>
-									<svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/examples/pytorch_models" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">PyTorch models</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/examples/tensorflow_models"
-											class="astro-3ii7xxms"> <span class="astro-3ii7xxms">TensorFlow models</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/examples/diffuser_models" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Duffuser models</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/examples/multi_image_sr_model"
-											class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Multi-image SR model</span> </a> </li>
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/examples/create_correctness_animation"
-											class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Create Correctness animation</span> </a>
-									</li>
-								</ul>
-							</details>
-						</li>
-						<li class="astro-3ii7xxms">
-							<details open class="astro-3ii7xxms">
-								<summary class="astro-3ii7xxms">
-									<div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Benchmark</span> </div>
-									<svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;">
-										<path
-											d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg>
-								</summary>
-								<ul class="astro-3ii7xxms">
-									<li class="astro-3ii7xxms"> <a href="/starling/docs/benchmarks/benchmarks" class="astro-3ii7xxms">
-											<span class="astro-3ii7xxms">Benchmark</span> </a> </li>
-								</ul>
-							</details>
-						</li>
-					</ul>
-					<div class="md:sl-hidden">
-						<div class="mobile-preferences sl-flex astro-wu23bvmt">
-							<div class="sl-flex social-icons astro-wu23bvmt"> <a href="https://github.com/ESAOpenSR/opensr-test"
-									rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg
-										aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24"
-										fill="currentColor" style="--sl-icon-size: 1em;">
-										<path
-											d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z" />
-									</svg> </a> </div> <starlight-theme-select> <label style="--sl-select-width: 6.25em"
-									class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg
-										aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16"
-										viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;">
-										<path
-											d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z" />
-									</svg> <select value="auto" class="astro-4yphtoen">
-										<option value="dark" class="astro-4yphtoen">Dark</option>
-										<option value="light" class="astro-4yphtoen">Light</option>
-										<option value="auto" selected="true" class="astro-4yphtoen">Auto</option>
-									</select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16"
-										height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;">
-										<path
-											d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z" />
-									</svg> </label> </starlight-theme-select>
-							<script>
-								StarlightThemeProvider.updatePickers();
-							</script>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<div class="main-frame astro-vrdttmbt">
-			<div class="lg:sl-flex astro-67yu43on">
-				<aside class="right-sidebar-container astro-67yu43on">
-					<div class="right-sidebar astro-67yu43on">
-						<div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3"
-								class="astro-doynk5tl">
-								<nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl">
-									<details id="starlight__mobile-toc" class="astro-doynk5tl">
-										<summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl">
-											<div class="toggle sl-flex astro-doynk5tl">On this page<svg aria-hidden="true"
-													class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24"
-													fill="currentColor" style="--sl-icon-size: 1rem;">
-													<path
-														d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z" />
-												</svg> </div><span class="display-current astro-doynk5tl"></span>
-										</summary>
-										<div class="dropdown astro-doynk5tl">
-											<ul class="isMobile astro-g2bywc46" style="--depth: 0;">
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>
-												</li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#identification-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Identification Information</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#description" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Description</span>
-													</a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#time-period-of-content"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Time Period of Content</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#status" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Status</span> </a>
-												</li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-domain" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Domain</span>
-													</a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#keywords" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Keywords</span> </a>
-												</li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#access-constraints"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Access Constraints</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#use-constraints"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Use Constraints</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#point-of-contact"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Point of Contact</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#browse-graphic" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Browse Graphic</span>
-													</a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#native-data-set-environment"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Native Data Set Environment</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#data-quality-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Data Quality Information</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#lineage" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Lineage</span> </a>
-												</li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-data-organization-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Spatial Data Organization Information</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-reference-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Spatial Reference Information</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#entity-and-attribute-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Entity and Attribute Information</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#distribution-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Distribution Information</span> </a> </li>
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#metadata-reference-information"
-														class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-															style="--depth: 0;">Metadata Reference Information</span> </a> </li>
-											</ul>
-										</div>
-									</details>
-								</nav>
-							</mobile-starlight-toc></div>
-						<div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn">
-							<div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3">
-									<nav aria-labelledby="starlight__on-this-page">
-										<h2 id="starlight__on-this-page">On this page</h2>
-										<ul class="astro-g2bywc46" style="--depth: 0;">
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>
-											</li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#identification-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Identification Information</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#description" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Description</span> </a>
-											</li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#time-period-of-content"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Time Period of Content</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#status" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Status</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-domain" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Domain</span>
-												</a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#keywords" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Keywords</span> </a>
-											</li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#access-constraints"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Access Constraints</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#use-constraints" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Use Constraints</span>
-												</a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#point-of-contact" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Point of Contact</span>
-												</a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#browse-graphic" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Browse Graphic</span>
-												</a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#native-data-set-environment"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Native Data Set Environment</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#data-quality-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Data Quality Information</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#lineage" class="astro-g2bywc46"
-													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Lineage</span> </a>
-											</li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-data-organization-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Spatial Data Organization Information</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-reference-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Spatial Reference Information</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#entity-and-attribute-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Entity and Attribute Information</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#distribution-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Distribution Information</span> </a> </li>
-											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#metadata-reference-information"
-													class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46"
-														style="--depth: 0;">Metadata Reference Information</span> </a> </li>
-										</ul>
-									</nav>
-								</starlight-toc></div>
-						</div>
-					</div>
-				</aside>
-				<div class="main-pane astro-67yu43on">
-					<main data-pagefind-body lang="en" dir="ltr" class="astro-bguv2lll">
-						<div class="content-panel astro-7nkwcw3z">
-							<div class="sl-container astro-7nkwcw3z">
-								<h1 id="_top" class="astro-j6tvhyss">The NAIP product</h1>
-							</div>
-						</div>
-						<div class="content-panel astro-7nkwcw3z">
-							<div class="sl-container astro-7nkwcw3z">
-								<div class="sl-markdown-content">
-									<h2 id="identification-information">Identification Information</h2>
-									<ul>
-										<li><strong>Citation</strong>:
-											<ul>
-												<li><strong>Citation Information</strong>:
-													<ul>
-														<li>Originator: USDA-FSA-APFO Aerial Photography Field Office</li>
-														<li>Publication Date: 20111108</li>
-														<li>Title: NAIP Digital Ortho Photo Image</li>
-														<li>Geospatial Data Presentation Form: remote-sensing image</li>
-														<li><strong>Publication Information</strong>:
-															<ul>
-																<li>Publication Place: Salt Lake City, Utah</li>
-																<li>Publisher: USDA-FSA-APFO Aerial Photography Field Office</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="description">Description</h2>
-									<ul>
-										<li><strong>Abstract</strong>:
-											<ul>
-												<li>This data set contains imagery from the National Agriculture Imagery Program (NAIP). NAIP
-													acquires digital ortho imagery during the agricultural growing seasons in the continental U.S.
-													A primary goal of the NAIP program is to make ortho imagery available within one year of
-													acquisition. NAIP offers four main products: 1-meter GSD ortho imagery rectified to a
-													horizontal accuracy of within +/- 5 meters of reference DOQQs from NDOP; 2-meter GSD ortho
-													imagery rectified to within +/- 10 meters of reference DOQQs; 1-meter GSD ortho imagery
-													rectified to within +/- 6 meters to true ground; and 2-meter GSD ortho imagery rectified to
-													within +/- 10 meters to true ground. The tiling format of NAIP imagery is based on a 3.75’ x
-													3.75’ quarter quadrangle with a 300-meter buffer on all sides, formatted to the UTM coordinate
-													system using NAD83. NAIP imagery may contain up to 10% cloud cover per tile.</li>
-											</ul>
-										</li>
-										<li><strong>Purpose</strong>:
-											<ul>
-												<li>NAIP imagery is intended to provide current agricultural conditions in support of USDA farm
-													programs. The 1-meter GSD product is used for Common Land Unit boundaries and other data sets.
-													The 1-meter NAIP imagery is usually acquired in full-state projects in cooperation with state
-													government and other federal agencies for various purposes, including land use planning and
-													natural resource assessment. NAIP is also used for disaster response, providing current
-													pre-event imagery. The 2-meter GSD NAIP imagery, primarily for assessing crop condition and
-													compliance with USDA farm program conditions, is typically acquired only for agricultural
-													areas within state projects.</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="time-period-of-content">Time Period of Content</h2>
-									<ul>
-										<li><strong>Time Period Information</strong>:
-											<ul>
-												<li>Single Date/Time:
-													<ul>
-														<li>Calendar Date: 20110720</li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li>Currentness Reference: Ground Condition</li>
-									</ul>
-									<h2 id="status">Status</h2>
-									<ul>
-										<li>Progress: Complete</li>
-										<li>Maintenance and Update Frequency: Irregular</li>
-									</ul>
-									<h2 id="spatial-domain">Spatial Domain</h2>
-									<ul>
-										<li><strong>Bounding Coordinates</strong>:
-											<ul>
-												<li>West Bounding Coordinate: -112.0000</li>
-												<li>East Bounding Coordinate: -111.9375</li>
-												<li>North Bounding Coordinate: 40.5625</li>
-												<li>South Bounding Coordinate: 40.5000</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="keywords">Keywords</h2>
-									<ul>
-										<li><strong>Theme</strong>:
-											<ul>
-												<li>Theme Keyword Thesaurus: None</li>
-												<li>Theme Keywords: farming, Digital Ortho rectified Image, Ortho Rectification, Quarter
-													Quadrangle Centered, NAIP, Aerial Compliance, Compliance</li>
-											</ul>
-										</li>
-										<li><strong>Place</strong>:
-											<ul>
-												<li>Place Keyword Thesaurus: Geographic Names Information System</li>
-												<li>Place Keywords: UT, Salt Lake, 49035, UT035, SALT LAKE CO UT FSA, 4011125, MIDVALE, SW,
-													MIDVALE</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="access-constraints">Access Constraints</h2>
-									<ul>
-										<li>There are no limitations for access.</li>
-									</ul>
-									<h2 id="use-constraints">Use Constraints</h2>
-									<ul>
-										<li>Imagery may be replaced to address defects found in a small number of products through quality
-											assurance processes. Imagery containing defects requiring new imagery acquisition, such as
-											excessive cloud cover, specular reflectance, etc., will not be replaced within a NAIP project
-											year.</li>
-									</ul>
-									<h2 id="point-of-contact">Point of Contact</h2>
-									<ul>
-										<li><strong>Contact Information</strong>:
-											<ul>
-												<li><strong>Contact Organization Primary</strong>:
-													<ul>
-														<li>Contact Organization: Aerial Photography Field Office (APFO)</li>
-													</ul>
-												</li>
-												<li><strong>Contact Address</strong>:
-													<ul>
-														<li>Address Type: mailing and physical address</li>
-														<li>Address: 2222 West 2300 South, Salt Lake City, Utah, 84119-2020, USA</li>
-													</ul>
-												</li>
-												<li>Contact Voice Telephone: 801-844-2922</li>
-												<li>Contact Facsimile Telephone: 801-956-3653</li>
-												<li>Contact Electronic Mail Address: <a
-														href="mailto:apfo.sales@slc.usda.gov">apfo.sales@slc.usda.gov</a></li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="browse-graphic">Browse Graphic</h2>
-									<ul>
-										<li>Browse Graphic File Name: None</li>
-										<li>Browse Graphic File Description: None</li>
-										<li>Browse Graphic File Type: None</li>
-									</ul>
-									<h2 id="native-data-set-environment">Native Data Set Environment</h2>
-									<ul>
-										<li>Unknown</li>
-									</ul>
-									<h2 id="data-quality-information">Data Quality Information</h2>
-									<ul>
-										<li><strong>Logical Consistency Report</strong>:
-											<ul>
-												<li>NAIP 3.75 minute tile file names are based on the USGS quadrangle naming convention.</li>
-											</ul>
-										</li>
-										<li>Completeness Report: None</li>
-										<li><strong>Positional Accuracy</strong>:
-											<ul>
-												<li><strong>Horizontal Positional Accuracy</strong>:
-													<ul>
-														<li>Horizontal Positional Accuracy Report: FSA Digital Orthophoto Specs.</li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="lineage">Lineage</h2>
-									<ul>
-										<li>
-											<p><strong>Source Information</strong>:</p>
-											<ul>
-												<li><strong>Source Citation</strong>:
-													<ul>
-														<li><strong>Citation Information</strong>:
-															<ul>
-																<li>Originator: USDA-FSA-APFO Aerial Photography Field Office</li>
-																<li>Publication Date: 20111108</li>
-																<li>Title: MIDVALE, SW</li>
-																<li>Geospatial Data Presentation Form: remote-sensing image</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-												<li>Type of Source Media: Unknown</li>
-												<li><strong>Source Time Period of Content</strong>:
-													<ul>
-														<li><strong>Time Period Information</strong>:
-															<ul>
-																<li>Single Date/Time:
-																	<ul>
-																		<li>Calendar Date: 20110720</li>
-																	</ul>
-																</li>
-															</ul>
-														</li>
-														<li>Source Currentness Reference: Aerial Photography Date for aerial photo source.</li>
-													</ul>
-												</li>
-												<li>Source Citation Abbreviation: Georectified Image</li>
-												<li>Source Contribution: Digital Georectified Image.</li>
-											</ul>
-										</li>
-										<li>
-											<p><strong>Process Step</strong>:</p>
-											<ul>
-												<li>
-													<p>Process Description: Digital imagery was collected at a nominal GSD of 1.0m using three
-														Cessna 441 aircrafts flying at an average flight height of 9052m AGL. N14NW, N16NW flew with
-														Leica Geosystem’s ADS80/SH82 digital sensors sn30017 &#x26; sn30034 both with firmware 3.15.
-														N911PJ flew with Leica Geosystem’s ADS40/SH52 digital sensor sn30014 with firmware v2.14.
-														Each sensor collected 11 image bands. PanF27A, PanF02A, and PanB14A panchromatic bands with
-														a spectral range of 465-676nm. RedN00a and RedB16a with a spectral range of 604-664nm.
-														GrnN00a and GrnB16a with a spectral range of 533-587nm. BluN00a and BluB16a with a spectral
-														range of 420-492nm and Near-infrared bands NirN00a and NirB16a with a spectral range of
-														833-920nm. The CCD arrays have a pixel size of 6.5 microns in a 12000x1 format. Both the
-														CCD’s and the A/D convertors have a dynamic range of 12bits. The data is stored in 16bit
-														format. The ADS is a push-broom sensor and the ground footprint of the imagery at NAIP scale
-														is 12km wide by the length flightline. The maximum flightline length is limited to
-														approximately 240km. The factory calibrations and IMU alignments for each sensor (sn30017
-														8/6/2009, sn30014 5/15/2008 and sn30034 12/7/2007) were tested and verified by in-situ test
-														flights before the start of the project. The Leica ADS Flight Planning and Evaluation
-														Software (FPES) is used to develop the flight acquisition plans. Flight acquisition sub
-														blocks are designed first to define the GNSS base station logistics, and to break the
-														project up into manageable acquisition units. The flight acquisition sub blocks are designed
-														based on the specified acquisition season, native UTM zone of the DOQQs, flight line length
-														limitations (to ensure sufficient performance of the IMU solution) as well as air traffic
-														restrictions in the area. Once the sub blocks have been delineated they are brought into
-														FPES for flight line design. The design parameters used in FPES will be 30% lateral overlap
-														and 1.0m resolution. The flight lines have been designed with a north/south orientation. The
-														design takes into account the latitude of the state, which affects line spacing due to
-														convergence as well as the terrain. SRTM elevation data is used in the FPES design to ensure
-														the 1m GSD is achieved over all types of terrain. The raw data was downloaded from the
-														sensors after each flight using Leica XPro software. The imagery was then georeferenced
-														using the 200Hz GPS/INS data creating an exterior orientation for each scan line
-														(x/y/z/o/p/k). Technicians precisely measured tie points in 3 bands/looks
-														(Back/Nadir/Forward) for each line using Leica Xpro software. The resulting point data and
-														exterior orientation data were used to perform a full bundle adjustment with ORIMA software.
-														Blunders were removed, and additional tie points measured in weak areas to ensure a robust
-														solution. Once the point data was clean and point coverage was acceptable,
-														photo-identifiable GPS-surveyed ground control points were introduced into the block
-														adjustment. The bundle adjustment process produces revised exterior orientation data for the
-														sensor with GPS/INS, datum, and sensor calibration errors modeled and removed. Using the
-														revised exterior orientation from the bundle adjustment, orthorectified image strips were
-														created with Xpro software and the May 2011 USGS 10m NED DEM. The Xpro orthorectification
-														software applies an atmospheric-BRDF radiometric correction to the imagery. This correction
-														compensates for atmospheric absorption, solar illumination angle and bi-directional
-														reflectance. The orthorectified strips were then overlaid with each other and the ground
-														control to check accuracy. Once the accuracy of the orthorectified image strips were
-														validated the strips were then imported into Inpho’s OrthoVista 4.5 package which was used
-														for the final radiometric balance, mosaic, and DOQQ sheet creation. The final DOQQ sheets,
-														with a 300m buffer and a ground pixel resolution of 1m were then combined and compressed to
-														create the county-wide CCMs.</p>
-												</li>
-												<li>
-													<p>Process Date: 20111108</p>
-												</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="spatial-data-organization-information">Spatial Data Organization Information</h2>
-									<ul>
-										<li>Indirect Spatial Reference: Salt Lake County, UT</li>
-										<li>Direct Spatial Reference Method: Raster</li>
-										<li><strong>Raster Object Information</strong>:
-											<ul>
-												<li>Raster Object Type: Pixel</li>
-												<li>Row Count: 1</li>
-												<li>Column Count: 1</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="spatial-reference-information">Spatial Reference Information</h2>
-									<ul>
-										<li><strong>Horizontal Coordinate System Definition</strong>:
-											<ul>
-												<li><strong>Planar</strong>:
-													<ul>
-														<li><strong>Grid Coordinate System</strong>:
-															<ul>
-																<li>Grid Coordinate System Name: Universal Transverse Mercator</li>
-																<li><strong>Universal Transverse Mercator</strong>:
-																	<ul>
-																		<li>UTM Zone Number: 12</li>
-																		<li><strong>Transverse Mercator</strong>:
-																			<ul>
-																				<li>Scale Factor at Central Meridian: 0.9996</li>
-																				<li>Longitude of Central Meridian: -111.0</li>
-																				<li>Latitude of Projection Origin: 0.0</li>
-																				<li>False Easting: 500000</li>
-																				<li>False Northing: 0.0</li>
-																			</ul>
-																		</li>
-																	</ul>
-																</li>
-															</ul>
-														</li>
-														<li><strong>Planar Coordinate Information</strong>:
-															<ul>
-																<li>Planar Coordinate Encoding Method: row and column</li>
-																<li><strong>Coordinate Representation</strong>:
-																	<ul>
-																		<li>Abscissa Resolution: 1</li>
-																		<li>Ordinate Resolution: 1</li>
-																	</ul>
-																</li>
-																<li>Planar Distance Units: meters</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-												<li><strong>Geodetic Model</strong>:
-													<ul>
-														<li>Horizontal Datum Name: North American Datum of 1983</li>
-														<li>Ellipsoid Name: Geodetic Reference System 80 (GRS 80)</li>
-														<li>Semi-major Axis: 6378137</li>
-														<li>Denominator of Flattening Ratio: 298.257</li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="entity-and-attribute-information">Entity and Attribute Information</h2>
-									<ul>
-										<li><strong>Overview Description</strong>:
-											<ul>
-												<li><strong>Entity and Attribute Overview</strong>:
-													<ul>
-														<li>32-bit pixels, 4 band color (RGBIR) values 0 - 255</li>
-													</ul>
-												</li>
-												<li>Entity and Attribute Detail Citation: None</li>
-											</ul>
-										</li>
-									</ul>
-									<h2 id="distribution-information">Distribution Information</h2>
-									<ul>
-										<li><strong>Distributor</strong>:
-											<ul>
-												<li><strong>Contact Information</strong>:
-													<ul>
-														<li><strong>Contact Person Primary</strong>:
-															<ul>
-																<li>Contact Person: Supervisor Customer Services Section</li>
-																<li>Contact Organization: USDA-FSA-APFO Aerial Photography Field Office</li>
-															</ul>
-														</li>
-														<li><strong>Contact Address</strong>:
-															<ul>
-																<li>Address Type: mailing and physical address</li>
-																<li>Address: 2222 West 2300 South, Salt Lake City, Utah, 84119-2020, USA</li>
-															</ul>
-														</li>
-														<li>Contact Voice Telephone: 801-844-2922</li>
-														<li>Contact Facsimile Telephone: 801-956-3653</li>
-														<li>Contact Electronic Mail Address: <a
-																href="mailto:apfo.sales@slc.usda.gov">apfo.sales@slc.usda.gov</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li><strong>Distribution Liability</strong>:
-											<ul>
-												<li>In no event shall the creators, custodians, or distributors of this information be liable
-													for any damages arising out of its use (or the inability to use it).</li>
-											</ul>
-										</li>
-										<li><strong>Standard Order Process</strong>:
-											<ul>
-												<li><strong>Digital Form</strong>:
-													<ul>
-														<li><strong>Digital Transfer Information</strong>:
-															<ul>
-																<li>Format Name: GeoTIFF - Georeferenced Tagged Image File Format</li>
-																<li>Format Information Content: Multispectral 4-band</li>
-															</ul>
-														</li>
-														<li><strong>Digital Transfer Option</strong>:
-															<ul>
-																<li><strong>Offline Option</strong>:
-																	<ul>
-																		<li>Offline Media: CD-ROM</li>
-																		<li>Recording Format: ISO 9660 Mode 1 Level 2 Extensions</li>
-																	</ul>
-																</li>
-															</ul>
-														</li>
-													</ul>
-												</li>
-												<li>Fees: Contact the Aerial Photography Field Office for more information</li>
-											</ul>
-										</li>
-										<li>Resource Description: m_4011125_sw_12_1_20110720_20111011.tif</li>
-									</ul>
-									<h2 id="metadata-reference-information">Metadata Reference Information</h2>
-									<ul>
-										<li>Metadata Date: 20111108</li>
-										<li><strong>Metadata Contact</strong>:
-											<ul>
-												<li><strong>Contact Information</strong>:
-													<ul>
-														<li><strong>Contact Organization Primary</strong>:
-															<ul>
-																<li>Contact Organization: USDA-FSA-APFO Aerial Photography Field Office</li>
-															</ul>
-														</li>
-														<li><strong>Contact Address</strong>:
-															<ul>
-																<li>Address Type: mailing and physical address</li>
-																<li>Address: 2222 West 2300 South, Salt Lake City, Utah, 84119-2020, USA</li>
-															</ul>
-														</li>
-														<li>Contact Voice Telephone: 801-844-2922</li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li>Metadata Standard Name: Content Standard for Digital Geospatial Metadata</li>
-										<li>Metadata Standard Version: FGDC-STD-001-1998</li>
-									</ul>
-									<p>Metadata obtained from: <a
-											href="https://naipeuwest.blob.core.windows.net/naip/v002/ut/2011/ut_fgdc_2011/40111/m_4011125_sw_12_1_20110720.txt">https://naipeuwest.blob.core.windows.net/naip/v002/ut/2011/ut_fgdc_2011/40111/m_4011125_sw_12_1_20110720.txt</a>
-									</p>
-									<p align="center">
-										<img src="/src/assets/images/naip1.png" align="left" width="40%">
-										<img src="/src/assets/images/naip2.png" align="right" width="40%">
-										&#x3C;---
-									</p>
-								</div>
-								<footer class="astro-3yyafb3n">
-									<div class="meta sl-flex astro-3yyafb3n"> </div>
-									<div class="pagination-links astro-u2l5gyhi" dir="ltr"> </div>
-								</footer>
-							</div>
-						</div>
-					</main>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-
-</html>
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg> <svg aria-hidden="true" class="dark astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg> <svg aria-hidden="true" class="auto astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg> </template><link rel="stylesheet" href="/starling/docs/_astro/index.XWcNq7oi.css" />
+<style>svg:where(.astro-c6vsoqas){color:var(--sl-icon-color);font-size:var(--sl-icon-size, 1em);width:1em;height:1em}
+</style><script type="module" src="/starling/docs/_astro/hoisted.4XgyF7sm.js"></script>
+<script type="module" src="/starling/docs/_astro/page.X_0NJa-z.js"></script></head> <body class="astro-bguv2lll"> <a href="#_top" class="astro-7q3lir66">Skip to content</a>  <div class="page sl-flex astro-vrdttmbt"> <header class="header astro-vrdttmbt"><div class="header sl-flex astro-kmkmnagf"> <div class="sl-flex astro-kmkmnagf"> <a href="/starling/docs/" class="site-title sl-flex astro-m46x6ez3">  <span class="astro-m46x6ez3"> OpenSR test </span> </a>  </div> <div class="sl-flex astro-kmkmnagf"> <site-search data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}" class="astro-v37mnknz"> <button data-open-modal disabled class="astro-v37mnknz">  <svg aria-label="Search" class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>  <span class="sl-hidden md:sl-block astro-v37mnknz" aria-hidden="true">Search</span> <svg aria-label="(Press / to Search)" class="sl-hidden md:sl-block astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5Zm3 15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10Z"/><path d="M15.293 6.707a1 1 0 1 1 1.414 1.414l-8.485 8.486a1 1 0 0 1-1.414-1.415l8.485-8.485Z"/></svg>  </button> <dialog style="padding:0" aria-label="Search" class="astro-v37mnknz"> <div class="dialog-frame sl-flex astro-v37mnknz">  <button data-close-modal class="sl-flex md:sl-hidden astro-v37mnknz"> Cancel </button> <div class="search-container astro-v37mnknz"> <div id="starlight__search" class="astro-v37mnknz"></div> </div> </div> </dialog> </site-search>    </div> <div class="sl-hidden md:sl-flex right-group astro-kmkmnagf"> <div class="sl-flex social-icons astro-kmkmnagf"> <a href="https://github.com/ESAOpenSR/opensr-test" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Dark</option><option value="light" class="astro-4yphtoen">Light</option><option value="auto" selected="true" class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div> </div> </header> <nav class="sidebar astro-vrdttmbt" aria-label="Main"> <starlight-menu-button class="astro-jif73yzw"> <button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-jif73yzw"> <svg aria-hidden="true" class="astro-jif73yzw astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>  </button> </starlight-menu-button>    <div id="starlight__sidebar" class="sidebar-pane astro-vrdttmbt"> <div class="sidebar-content sl-flex astro-vrdttmbt"> <ul class="top-level astro-3ii7xxms"> <li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Home</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./home/home" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Home</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./home/contributing" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Contributing</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./home/code_of_conduct" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Code of Conduct</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./home/changelog" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Changelog</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./home/license" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">License</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Properties</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./properties/main" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">main</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">API</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./api/model_parameters" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Model parameters</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./api/setup_method" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Setup method</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./api/compute_method" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Compute method</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./api/summary_method" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Summary method</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./api/results_attributes" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Results attributes</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Dataset</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./dataset/home" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Home</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./dataset/naip" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">NAIP</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./dataset/spot" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">SPOT</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./dataset/venµs" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">venµs</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Metrics</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./metrics/consistency" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Consistency metrics</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./metrics/distance" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Distance metrics</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./metrics/correctness" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Correctness metrics</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Examples</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./examples/pytorch_models" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">PyTorch models</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./examples/tensorflow_models" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">TensorFlow models</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./examples/diffuser_models" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Duffuser models</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./examples/multi_image_sr_model" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Multi-image SR model</span>  </a> </li><li class="astro-3ii7xxms"> <a href="/starling/docs/./examples/create_correctness_animation" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Create Correctness animation</span>  </a> </li> </ul>  </details> </li><li class="astro-3ii7xxms"> <details open class="astro-3ii7xxms"> <summary class="astro-3ii7xxms"> <div class="group-label astro-3ii7xxms"> <span class="large astro-3ii7xxms">Benchmark</span>  </div> <svg aria-hidden="true" class="caret astro-3ii7xxms astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </summary> <ul class="astro-3ii7xxms"> <li class="astro-3ii7xxms"> <a href="/starling/docs/./benchmarks/benchmarks" class="astro-3ii7xxms"> <span class="astro-3ii7xxms">Benchmark</span>  </a> </li> </ul>  </details> </li> </ul>  <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-wu23bvmt"> <div class="sl-flex social-icons astro-wu23bvmt"> <a href="https://github.com/ESAOpenSR/opensr-test" rel="me" class="sl-flex astro-wy4te6ga"><span class="sr-only astro-wy4te6ga">GitHub</span><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg> </a> </div> <starlight-theme-select>  <label style="--sl-select-width: 6.25em" class="astro-4yphtoen"> <span class="sr-only astro-4yphtoen">Select theme</span> <svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg>  <select value="auto" class="astro-4yphtoen"> <option value="dark" class="astro-4yphtoen">Dark</option><option value="light" class="astro-4yphtoen">Light</option><option value="auto" selected="true" class="astro-4yphtoen">Auto</option> </select> <svg aria-hidden="true" class="icon caret astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg>  </label>  </starlight-theme-select>  <script>
+	StarlightThemeProvider.updatePickers();
+</script>   </div>  </div> </div> </div> </nav> <div class="main-frame astro-vrdttmbt">  <div class="lg:sl-flex astro-67yu43on"> <aside class="right-sidebar-container astro-67yu43on"> <div class="right-sidebar astro-67yu43on"> <div class="lg:sl-hidden astro-pb3aqygn"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-doynk5tl"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-doynk5tl"><details id="starlight__mobile-toc" class="astro-doynk5tl"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-doynk5tl"><div class="toggle sl-flex astro-doynk5tl">On this page<svg aria-hidden="true" class="caret astro-doynk5tl astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </div><span class="display-current astro-doynk5tl"></span></summary><div class="dropdown astro-doynk5tl"><ul class="isMobile astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#identification-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Identification Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#description" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Description</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#time-period-of-content" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Time Period of Content</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#status" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Status</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-domain" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Domain</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#keywords" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Keywords</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#access-constraints" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Access Constraints</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#use-constraints" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Use Constraints</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#point-of-contact" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Point of Contact</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#browse-graphic" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Browse Graphic</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#native-data-set-environment" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Native Data Set Environment</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#data-quality-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Data Quality Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#lineage" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Lineage</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-data-organization-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Data Organization Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-reference-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Reference Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#entity-and-attribute-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Entity and Attribute Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#distribution-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Distribution Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#metadata-reference-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Metadata Reference Information</span> </a>  </li> </ul> </div></details></nav></mobile-starlight-toc></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-pb3aqygn"><div class="sl-container astro-pb3aqygn"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-g2bywc46" style="--depth: 0;"> <li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#identification-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Identification Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#description" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Description</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#time-period-of-content" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Time Period of Content</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#status" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Status</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-domain" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Domain</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#keywords" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Keywords</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#access-constraints" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Access Constraints</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#use-constraints" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Use Constraints</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#point-of-contact" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Point of Contact</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#browse-graphic" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Browse Graphic</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#native-data-set-environment" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Native Data Set Environment</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#data-quality-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Data Quality Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#lineage" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Lineage</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-data-organization-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Data Organization Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#spatial-reference-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Spatial Reference Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#entity-and-attribute-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Entity and Attribute Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#distribution-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Distribution Information</span> </a>  </li><li class="astro-g2bywc46" style="--depth: 0;"> <a href="#metadata-reference-information" class="astro-g2bywc46" style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Metadata Reference Information</span> </a>  </li> </ul> </nav></starlight-toc></div></div> </div> </aside> <div class="main-pane astro-67yu43on">  <main data-pagefind-body lang="en" dir="ltr" class="astro-bguv2lll">    <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <h1 id="_top" class="astro-j6tvhyss">The NAIP product</h1>  </div> </div>  <div class="content-panel astro-7nkwcw3z"> <div class="sl-container astro-7nkwcw3z"> <div class="sl-markdown-content"> <h2 id="identification-information">Identification Information</h2>
+<ul>
+<li><strong>Citation</strong>:
+<ul>
+<li><strong>Citation Information</strong>:
+<ul>
+<li>Originator: USDA-FSA-APFO Aerial Photography Field Office</li>
+<li>Publication Date: 20111108</li>
+<li>Title: NAIP Digital Ortho Photo Image</li>
+<li>Geospatial Data Presentation Form: remote-sensing image</li>
+<li><strong>Publication Information</strong>:
+<ul>
+<li>Publication Place: Salt Lake City, Utah</li>
+<li>Publisher: USDA-FSA-APFO Aerial Photography Field Office</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="description">Description</h2>
+<ul>
+<li><strong>Abstract</strong>:
+<ul>
+<li>This data set contains imagery from the National Agriculture Imagery Program (NAIP). NAIP acquires digital ortho imagery during the agricultural growing seasons in the continental U.S. A primary goal of the NAIP program is to make ortho imagery available within one year of acquisition. NAIP offers four main products: 1-meter GSD ortho imagery rectified to a horizontal accuracy of within +/- 5 meters of reference DOQQs from NDOP; 2-meter GSD ortho imagery rectified to within +/- 10 meters of reference DOQQs; 1-meter GSD ortho imagery rectified to within +/- 6 meters to true ground; and 2-meter GSD ortho imagery rectified to within +/- 10 meters to true ground. The tiling format of NAIP imagery is based on a 3.75’ x 3.75’ quarter quadrangle with a 300-meter buffer on all sides, formatted to the UTM coordinate system using NAD83. NAIP imagery may contain up to 10% cloud cover per tile.</li>
+</ul>
+</li>
+<li><strong>Purpose</strong>:
+<ul>
+<li>NAIP imagery is intended to provide current agricultural conditions in support of USDA farm programs. The 1-meter GSD product is used for Common Land Unit boundaries and other data sets. The 1-meter NAIP imagery is usually acquired in full-state projects in cooperation with state government and other federal agencies for various purposes, including land use planning and natural resource assessment. NAIP is also used for disaster response, providing current pre-event imagery. The 2-meter GSD NAIP imagery, primarily for assessing crop condition and compliance with USDA farm program conditions, is typically acquired only for agricultural areas within state projects.</li>
+</ul>
+</li>
+</ul>
+<h2 id="time-period-of-content">Time Period of Content</h2>
+<ul>
+<li><strong>Time Period Information</strong>:
+<ul>
+<li>Single Date/Time:
+<ul>
+<li>Calendar Date: 20110720</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Currentness Reference: Ground Condition</li>
+</ul>
+<h2 id="status">Status</h2>
+<ul>
+<li>Progress: Complete</li>
+<li>Maintenance and Update Frequency: Irregular</li>
+</ul>
+<h2 id="spatial-domain">Spatial Domain</h2>
+<ul>
+<li><strong>Bounding Coordinates</strong>:
+<ul>
+<li>West Bounding Coordinate: -112.0000</li>
+<li>East Bounding Coordinate: -111.9375</li>
+<li>North Bounding Coordinate: 40.5625</li>
+<li>South Bounding Coordinate: 40.5000</li>
+</ul>
+</li>
+</ul>
+<h2 id="keywords">Keywords</h2>
+<ul>
+<li><strong>Theme</strong>:
+<ul>
+<li>Theme Keyword Thesaurus: None</li>
+<li>Theme Keywords: farming, Digital Ortho rectified Image, Ortho Rectification, Quarter Quadrangle Centered, NAIP, Aerial Compliance, Compliance</li>
+</ul>
+</li>
+<li><strong>Place</strong>:
+<ul>
+<li>Place Keyword Thesaurus: Geographic Names Information System</li>
+<li>Place Keywords: UT, Salt Lake, 49035, UT035, SALT LAKE CO UT FSA, 4011125, MIDVALE, SW, MIDVALE</li>
+</ul>
+</li>
+</ul>
+<h2 id="access-constraints">Access Constraints</h2>
+<ul>
+<li>There are no limitations for access.</li>
+</ul>
+<h2 id="use-constraints">Use Constraints</h2>
+<ul>
+<li>Imagery may be replaced to address defects found in a small number of products through quality assurance processes. Imagery containing defects requiring new imagery acquisition, such as excessive cloud cover, specular reflectance, etc., will not be replaced within a NAIP project year.</li>
+</ul>
+<h2 id="point-of-contact">Point of Contact</h2>
+<ul>
+<li><strong>Contact Information</strong>:
+<ul>
+<li><strong>Contact Organization Primary</strong>:
+<ul>
+<li>Contact Organization: Aerial Photography Field Office (APFO)</li>
+</ul>
+</li>
+<li><strong>Contact Address</strong>:
+<ul>
+<li>Address Type: mailing and physical address</li>
+<li>Address: 2222 West 2300 South, Salt Lake City, Utah, 84119-2020, USA</li>
+</ul>
+</li>
+<li>Contact Voice Telephone: 801-844-2922</li>
+<li>Contact Facsimile Telephone: 801-956-3653</li>
+<li>Contact Electronic Mail Address: <a href="mailto:apfo.sales@slc.usda.gov">apfo.sales@slc.usda.gov</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="browse-graphic">Browse Graphic</h2>
+<ul>
+<li>Browse Graphic File Name: None</li>
+<li>Browse Graphic File Description: None</li>
+<li>Browse Graphic File Type: None</li>
+</ul>
+<h2 id="native-data-set-environment">Native Data Set Environment</h2>
+<ul>
+<li>Unknown</li>
+</ul>
+<h2 id="data-quality-information">Data Quality Information</h2>
+<ul>
+<li><strong>Logical Consistency Report</strong>:
+<ul>
+<li>NAIP 3.75 minute tile file names are based on the USGS quadrangle naming convention.</li>
+</ul>
+</li>
+<li>Completeness Report: None</li>
+<li><strong>Positional Accuracy</strong>:
+<ul>
+<li><strong>Horizontal Positional Accuracy</strong>:
+<ul>
+<li>Horizontal Positional Accuracy Report: FSA Digital Orthophoto Specs.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lineage">Lineage</h2>
+<ul>
+<li>
+<p><strong>Source Information</strong>:</p>
+<ul>
+<li><strong>Source Citation</strong>:
+<ul>
+<li><strong>Citation Information</strong>:
+<ul>
+<li>Originator: USDA-FSA-APFO Aerial Photography Field Office</li>
+<li>Publication Date: 20111108</li>
+<li>Title: MIDVALE, SW</li>
+<li>Geospatial Data Presentation Form: remote-sensing image</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Type of Source Media: Unknown</li>
+<li><strong>Source Time Period of Content</strong>:
+<ul>
+<li><strong>Time Period Information</strong>:
+<ul>
+<li>Single Date/Time:
+<ul>
+<li>Calendar Date: 20110720</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Source Currentness Reference: Aerial Photography Date for aerial photo source.</li>
+</ul>
+</li>
+<li>Source Citation Abbreviation: Georectified Image</li>
+<li>Source Contribution: Digital Georectified Image.</li>
+</ul>
+</li>
+<li>
+<p><strong>Process Step</strong>:</p>
+<ul>
+<li>
+<p>Process Description: Digital imagery was collected at a nominal GSD of 1.0m using three Cessna 441 aircrafts flying at an average flight height of 9052m AGL. N14NW, N16NW flew with Leica Geosystem’s ADS80/SH82 digital sensors sn30017 &#x26; sn30034 both with firmware 3.15. N911PJ flew with Leica Geosystem’s ADS40/SH52 digital sensor sn30014 with firmware v2.14. Each sensor collected 11 image bands. PanF27A, PanF02A, and PanB14A panchromatic bands with a spectral range of 465-676nm. RedN00a and RedB16a with a spectral range of 604-664nm. GrnN00a and GrnB16a with a spectral range of 533-587nm. BluN00a and BluB16a with a spectral range of 420-492nm and Near-infrared bands NirN00a and NirB16a with a spectral range of 833-920nm. The CCD arrays have a pixel size of 6.5 microns in a 12000x1 format. Both the CCD’s and the A/D convertors have a dynamic range of 12bits. The data is stored in 16bit format. The ADS is a push-broom sensor and the ground footprint of the imagery at NAIP scale is 12km wide by the length flightline. The maximum flightline length is limited to approximately 240km. The factory calibrations and IMU alignments for each sensor (sn30017 8/6/2009, sn30014 5/15/2008 and sn30034 12/7/2007) were tested and verified by in-situ test flights before the start of the project. The Leica ADS Flight Planning and Evaluation Software (FPES) is used to develop the flight acquisition plans. Flight acquisition sub blocks are designed first to define the GNSS base station logistics, and to break the project up into manageable acquisition units. The flight acquisition sub blocks are designed based on the specified acquisition season, native UTM zone of the DOQQs, flight line length limitations (to ensure sufficient performance of the IMU solution) as well as air traffic restrictions in the area. Once the sub blocks have been delineated they are brought into FPES for flight line design. The design parameters used in FPES will be 30% lateral overlap and 1.0m resolution. The flight lines have been designed with a north/south orientation. The design takes into account the latitude of the state, which affects line spacing due to convergence as well as the terrain. SRTM elevation data is used in the FPES design to ensure the 1m GSD is achieved over all types of terrain. The raw data was downloaded from the sensors after each flight using Leica XPro software. The imagery was then georeferenced using the 200Hz GPS/INS data creating an exterior orientation for each scan line (x/y/z/o/p/k). Technicians precisely measured tie points in 3 bands/looks (Back/Nadir/Forward) for each line using Leica Xpro software. The resulting point data and exterior orientation data were used to perform a full bundle adjustment with ORIMA software. Blunders were removed, and additional tie points measured in weak areas to ensure a robust solution. Once the point data was clean and point coverage was acceptable, photo-identifiable GPS-surveyed ground control points were introduced into the block adjustment. The bundle adjustment process produces revised exterior orientation data for the sensor with GPS/INS, datum, and sensor calibration errors modeled and removed. Using the revised exterior orientation from the bundle adjustment, orthorectified image strips were created with Xpro software and the May 2011 USGS 10m NED DEM. The Xpro orthorectification software applies an atmospheric-BRDF radiometric correction to the imagery. This correction compensates for atmospheric absorption, solar illumination angle and bi-directional reflectance. The orthorectified strips were then overlaid with each other and the ground control to check accuracy. Once the accuracy of the orthorectified image strips were validated the strips were then imported into Inpho’s OrthoVista 4.5 package which was used for the final radiometric balance, mosaic, and DOQQ sheet creation. The final DOQQ sheets, with a 300m buffer and a ground pixel resolution of 1m were then combined and compressed to create the county-wide CCMs.</p>
+</li>
+<li>
+<p>Process Date: 20111108</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="spatial-data-organization-information">Spatial Data Organization Information</h2>
+<ul>
+<li>Indirect Spatial Reference: Salt Lake County, UT</li>
+<li>Direct Spatial Reference Method: Raster</li>
+<li><strong>Raster Object Information</strong>:
+<ul>
+<li>Raster Object Type: Pixel</li>
+<li>Row Count: 1</li>
+<li>Column Count: 1</li>
+</ul>
+</li>
+</ul>
+<h2 id="spatial-reference-information">Spatial Reference Information</h2>
+<ul>
+<li><strong>Horizontal Coordinate System Definition</strong>:
+<ul>
+<li><strong>Planar</strong>:
+<ul>
+<li><strong>Grid Coordinate System</strong>:
+<ul>
+<li>Grid Coordinate System Name: Universal Transverse Mercator</li>
+<li><strong>Universal Transverse Mercator</strong>:
+<ul>
+<li>UTM Zone Number: 12</li>
+<li><strong>Transverse Mercator</strong>:
+<ul>
+<li>Scale Factor at Central Meridian: 0.9996</li>
+<li>Longitude of Central Meridian: -111.0</li>
+<li>Latitude of Projection Origin: 0.0</li>
+<li>False Easting: 500000</li>
+<li>False Northing: 0.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Planar Coordinate Information</strong>:
+<ul>
+<li>Planar Coordinate Encoding Method: row and column</li>
+<li><strong>Coordinate Representation</strong>:
+<ul>
+<li>Abscissa Resolution: 1</li>
+<li>Ordinate Resolution: 1</li>
+</ul>
+</li>
+<li>Planar Distance Units: meters</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Geodetic Model</strong>:
+<ul>
+<li>Horizontal Datum Name: North American Datum of 1983</li>
+<li>Ellipsoid Name: Geodetic Reference System 80 (GRS 80)</li>
+<li>Semi-major Axis: 6378137</li>
+<li>Denominator of Flattening Ratio: 298.257</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="entity-and-attribute-information">Entity and Attribute Information</h2>
+<ul>
+<li><strong>Overview Description</strong>:
+<ul>
+<li><strong>Entity and Attribute Overview</strong>:
+<ul>
+<li>32-bit pixels, 4 band color (RGBIR) values 0 - 255</li>
+</ul>
+</li>
+<li>Entity and Attribute Detail Citation: None</li>
+</ul>
+</li>
+</ul>
+<h2 id="distribution-information">Distribution Information</h2>
+<ul>
+<li><strong>Distributor</strong>:
+<ul>
+<li><strong>Contact Information</strong>:
+<ul>
+<li><strong>Contact Person Primary</strong>:
+<ul>
+<li>Contact Person: Supervisor Customer Services Section</li>
+<li>Contact Organization: USDA-FSA-APFO Aerial Photography Field Office</li>
+</ul>
+</li>
+<li><strong>Contact Address</strong>:
+<ul>
+<li>Address Type: mailing and physical address</li>
+<li>Address: 2222 West 2300 South, Salt Lake City, Utah, 84119-2020, USA</li>
+</ul>
+</li>
+<li>Contact Voice Telephone: 801-844-2922</li>
+<li>Contact Facsimile Telephone: 801-956-3653</li>
+<li>Contact Electronic Mail Address: <a href="mailto:apfo.sales@slc.usda.gov">apfo.sales@slc.usda.gov</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Distribution Liability</strong>:
+<ul>
+<li>In no event shall the creators, custodians, or distributors of this information be liable for any damages arising out of its use (or the inability to use it).</li>
+</ul>
+</li>
+<li><strong>Standard Order Process</strong>:
+<ul>
+<li><strong>Digital Form</strong>:
+<ul>
+<li><strong>Digital Transfer Information</strong>:
+<ul>
+<li>Format Name: GeoTIFF - Georeferenced Tagged Image File Format</li>
+<li>Format Information Content: Multispectral 4-band</li>
+</ul>
+</li>
+<li><strong>Digital Transfer Option</strong>:
+<ul>
+<li><strong>Offline Option</strong>:
+<ul>
+<li>Offline Media: CD-ROM</li>
+<li>Recording Format: ISO 9660 Mode 1 Level 2 Extensions</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fees: Contact the Aerial Photography Field Office for more information</li>
+</ul>
+</li>
+<li>Resource Description: m_4011125_sw_12_1_20110720_20111011.tif</li>
+</ul>
+<h2 id="metadata-reference-information">Metadata Reference Information</h2>
+<ul>
+<li>Metadata Date: 20111108</li>
+<li><strong>Metadata Contact</strong>:
+<ul>
+<li><strong>Contact Information</strong>:
+<ul>
+<li><strong>Contact Organization Primary</strong>:
+<ul>
+<li>Contact Organization: USDA-FSA-APFO Aerial Photography Field Office</li>
+</ul>
+</li>
+<li><strong>Contact Address</strong>:
+<ul>
+<li>Address Type: mailing and physical address</li>
+<li>Address: 2222 West 2300 South, Salt Lake City, Utah, 84119-2020, USA</li>
+</ul>
+</li>
+<li>Contact Voice Telephone: 801-844-2922</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Metadata Standard Name: Content Standard for Digital Geospatial Metadata</li>
+<li>Metadata Standard Version: FGDC-STD-001-1998</li>
+</ul>
+<p>Metadata obtained from: <a href="https://naipeuwest.blob.core.windows.net/naip/v002/ut/2011/ut_fgdc_2011/40111/m_4011125_sw_12_1_20110720.txt">https://naipeuwest.blob.core.windows.net/naip/v002/ut/2011/ut_fgdc_2011/40111/m_4011125_sw_12_1_20110720.txt</a></p>
+<p align="center">
+  <img src="/src/assets/images/naip1.png" align="left" width="40%">
+  <img src="/src/assets/images/naip2.png" align="right" width="40%">
+&#x3C;---</p> </div> <footer class="astro-3yyafb3n"> <div class="meta sl-flex astro-3yyafb3n">   </div> <div class="pagination-links astro-u2l5gyhi" dir="ltr">   </div>  </footer>  </div> </div>   </main> </div> </div>  </div> </div>  </body></html>
