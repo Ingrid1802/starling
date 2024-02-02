@@ -121,3 +121,26 @@ a {
   margin-left: 0.5rem;
   padding-bottom: 1px;
 }
+
+.play-button {
+  width: 68px;
+  height: 48px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -34px;
+  margin-top: -24px;
+  background-color: rgba(23, 23, 23, 0.8);
+  border-radius: 10px;
+}
+
+.play-button img {
+  width: 25%;
+  height: auto;
+  margin: 18% 0;
+  padding-top: 2px;
+}
+
+img {
+  width: 100%;
+}
