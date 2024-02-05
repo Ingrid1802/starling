@@ -385,16 +385,17 @@
 										metric is based on a deep neural network that was trained to predict perceptual similarity scores.
 										The reported metric is the average LPIPS score between the LR and SR images.</p>
 									<p>$$\text{LPIPS} = \sum_{l=1}^{L} w_l \cdot \frac{1}{H_lW_l} \sum_{h=1}^{H_l} \sum_{w=1}^{W_l} |
-										\phi_l(I_1)<em>{h,w} - \phi_l(I_2)</em>{h,w} |_2^2$$</p>
+										\phi_l(I_1){h,w} - \phi_l(I_2){h,w} |_2^2$${h,w} |_2^2$$</p>
 									<p>In this equation:</p>
 									<ul>
-										<li>$LPIPS$ is the Learned Perceptual Image Patch Similarity score.</li>
-										<li>$L$ denotes the number of layers in a deep neural network used for comparison.</li>
-										<li>$w_l$ represents the weight of the $l-th$ layer in the network.</li>
-										<li>$\phi_l(l)_{I}$ is the feature map of image $I$ at layer $l$.</li>
-										<li>$H_l$ and $W_l$ are the height and width of the feature map at layer $l$, respectively.</li>
-										<li>$I_1$ and $I_2$ are the two images being compared.</li>
-										<li>The summations across $h$ and $w$ are over the spatial dimensions of the feature maps.</li>
+										<li>\(LPIPS\) is the Learned Perceptual Image Patch Similarity score.</li>
+										<li>\(L\) denotes the number of layers in a deep neural network used for comparison.</li>
+										<li>\(w_l\) represents the weight of the \(l\)-th layer in the network.</li>
+										<li>\(\phi_l(I)\) is the feature map of image \(I\) at layer \(l\).</li>
+										<li>\(H_l\) and \(W_l\) are the height and width of the feature map at layer \(l\), respectively.
+										</li>
+										<li>\(I_1\) and \(I_2\) are the two images being compared.</li>
+										<li>The summations across \(h\) and \(w\) are over the spatial dimensions of the feature maps.</li>
 									</ul>
 									<p><strong>CLIPscore</strong></p>
 									<p>Proposed by Wolters et. al 2023 in <a href="https://arxiv.org/abs/2311.18082">Zooming Out on
