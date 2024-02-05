@@ -1,4 +1,13 @@
-/*nav*/
+h1,
+h2,
+h3 {
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 3rem;
+}
+
 
 .navbar {
   background-color: #000 !important;
@@ -193,4 +202,9 @@ blockquote {
   padding: 1rem 1.25rem 1px 1.25rem;
   border-left: 0.5rem solid #cccccc;
   color: #666666;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
 }
