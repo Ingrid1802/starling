@@ -58,6 +58,7 @@
 				d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z" />
 		</svg> </template>
 	<link rel="stylesheet" href="/starling/astro/index.XWcNq7oi.css" />
+	<link rel="stylesheet" href="../../style.css" />
 	<style>
 		svg:where(.astro-c6vsoqas) {
 			color: var(--sl-icon-color);
@@ -388,7 +389,7 @@
 									</ul>
 									<p><strong>L1 distance</strong>: The L1 distance is the sum of the absolute differences between the
 										two vectors. It is also known as the Manhattan distance.</p>
-									<p>\(L1(y, ŷ) = \frac{1}{n} \sum_{i=1}^{n} |y_i - ŷ_i|\)</p>
+									<p>\(L1(y,\hat{y}) = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \)</p>
 									<p><strong>L2 distance</strong>: The L2 distance is the square root of the sum of the squared
 										differences between the two vectors. It is also known as the Euclidean distance.</p>
 									<p>\(L2(y, ŷ) = \frac{1}{n} \sum_{i=1}^{n} (y_i - ŷ_i)^2\)</p>
@@ -422,20 +423,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		window.MathJax = {
-			startup: {
-				ready: () => {
-					console.log('MathJax is ready');
-					MathJax.startup.defaultReady();
-					MathJax.startup.promise.then(() => {
-					});
-				}
-			}
-		};
-	</script>
-	<script type="text/javascript" async
-		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
 	</script>
 </body>
 
