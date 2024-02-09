@@ -7,7 +7,7 @@
     "start": "astro dev",
     "preview": "astro preview",
     "astro": "astro",
-    "build": "astro build && shx cp src/content/docs/index.html docs/ && shx cp src/assets/style.css docs/style.css/"
+    "build": "astro build && shx cp src/content/docs/index.html docs/ && shx cp src/assets/style.css docs/assets/ && shx cp -r src/imgs/ docs/imgs/"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
