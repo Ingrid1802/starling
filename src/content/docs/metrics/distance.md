@@ -33,6 +33,7 @@ to the HR product or to the LR product. The distance metrics are calculated two 
 										<li>\(I_1\) and \(I_2\) are the two images being compared.</li>
 										<li>The summations across \(h\) and \(w\) are over the spatial dimensions of the feature maps.</li>
 									</ul>
+									
 **CLIPscore**
 
 Proposed by Wolters et. al 2023 in [Zooming Out on Zooming In: Advancing Super-Resolution for Remote Sensing](https://arxiv.org/abs/2311.18082). CLIPscore measures the distance in image embedding space between the HR|LR and the SR image using the [CLIP](https://github.com/openai/CLIP) model. Unlike LPIPS, with CLIPscore we can focus mainly in the contextual and semantic integrity of the super-resolved images. The reported metric is the cosine similarity between the image embeddings of the HR|LR and SR images.
