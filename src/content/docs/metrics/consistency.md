@@ -1,5 +1,6 @@
 ---
 title: Consistency metrics
+layout: ../../components/Layout.astro
 ---
 
 
@@ -14,24 +15,28 @@ The consistency metrics are used to evaluate the ability of the super-resolution
 
 **L1 distance**: The L1 distance is the sum of the absolute differences between the two vectors. It is also known as the Manhattan distance. 
 
-$$L1(y, ŷ) = \frac{1}{n} \sum_{i=1}^{n} |y_i - ŷ_i|$$
+<p style="text-align: center;">\(L1(y,\hat{y}) = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \)</p>
 
 **L2 distance**: The L2 distance is the square root of the sum of the squared differences between the two vectors. It is also known as the Euclidean distance.
 
-$$L2(y, ŷ) = \frac{1}{n} \sum_{i=1}^{n} (y_i - ŷ_i)^2$$
+<p style="text-align: center;">\(L2(y, ŷ) = \frac{1}{n} \sum_{i=1}^{n} (y_i - ŷ_i)^2\)</p>
+
 
 **Spectral angle distance**: The spectral angle distance is the angle between two vectors. This metric is used to measure the spectral consistency.
 
-$$SAD(\vec{y}, \vec{\hat{y}}) = \arccos\left(\frac{\vec{y} \cdot \vec{\hat{y}}}{\|\vec{y}\| \|\vec{\hat{y}}\|}\right)$$
+<p style="text-align: center;">\(SAD(\vec{y}, \vec{\hat{y}}) = \arccos\left(\frac{\vec{y} \cdot
+										\vec{\hat{y}}}{\|\vec{y}\|
+										\|\vec{\hat{y}}\|}\right)\)</p>
 
 **Percentage Bias**: The Percentage Bias (PBIAS) measures the average tendency of the super-resolved values to be larger or smaller than their observed counterparts. This metric help us to understand whether a model is changing the norm of the original reflectance values. The equation for calculating Percentage Bias is:
 
-$$PBIAS = \left( \frac{\sum_{i=1}^{n} (O_i - S_i)}{\sum_{i=1}^{n} O_i} \right)$$
+<p style="text-align: center;">\(PBIAS = \left( \frac{\sum_{i=1}^{n} (O_i - S_i)}{\sum_{i=1}^{n} O_i}
+										\right)\)</p>
 
 **Inverted Peak Signal-to-Noise Ratio**: The Inverted Peak Signal-to-Noise Ratio (IPSNR) is the inverse of the Peak Signal-to-Noise Ratio (PSNR). This metric is used to measure the high-frequency information. The equation for calculating IPSNR is:
 
-$$IPSNR = \frac{1}{PSNR}$$
+<p style="text-align: center;">\(IPSNR = \frac{1}{PSNR}\)</p>
 
 **Kullback-Leibler divergence**: The Kullback-Leibler divergence (KLD) is a measure of how one probability distribution is different from a second, reference probability distribution. This metric is used to measure the high-frequency information. The equation for calculating KLD is:
 
-$$KL(P || Q) = \sum_{x} P(x) \log\left(\frac{P(x)}{Q(x)}\right)$$
+<p style="text-align: center;">\(KL(P || Q) = \sum_{x} P(x) \log\left(\frac{P(x)}{Q(x)}\right)\)</p>

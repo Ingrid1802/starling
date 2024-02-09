@@ -15,7 +15,7 @@ export default defineConfig({
 				{
 					label: 'Home',
 					items: [
-						{ label: 'Home', link: './home/home' },
+						{ label: 'Home', link: './home/README' },
 						{ label: 'Contributing', link: './home/contributing' },
 						{ label: 'Code of Conduct', link: './home/code_of_conduct' },
 						{ label: 'Changelog', link: './home/changelog' },
@@ -24,9 +24,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Properties',
-					items: [
-						{ label: 'main', link: './properties/main' },
-					],
+					link: './properties/main',
 				},
 				{
 					label: 'API',
@@ -41,7 +39,7 @@ export default defineConfig({
 				{
 					label: 'Dataset',
 					items: [
-						{ label: 'Home', link: './dataset/home' },
+						{ label: 'Home', link: './dataset/introduction' },
 						{ label: 'NAIP', link: './dataset/naip' },
 						{ label: 'SPOT', link: './dataset/spot' },
 						{ label: 'venµs', link: './dataset/venµs' },

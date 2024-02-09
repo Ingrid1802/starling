@@ -1,5 +1,6 @@
 ---
 title: Triple distance metrics
+layout: ../../components/Layout.astro
 ---
 
 
