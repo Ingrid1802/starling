@@ -65,9 +65,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Benchmark',
-					items: [
-						{ label: 'Benchmark', link: './benchmarks/benchmarks' },
-					],
+					link: './benchmarks'
 				},
 			],
 		}),
