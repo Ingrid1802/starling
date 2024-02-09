@@ -422,7 +422,20 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+	<script>
+		window.MathJax = {
+			startup: {
+				ready: () => {
+					console.log('MathJax is ready');
+					MathJax.startup.defaultReady();
+					MathJax.startup.promise.then(() => {
+					});
+				}
+			}
+		};
+	</script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
 	</script>
 </body>
 
