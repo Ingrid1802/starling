@@ -39,7 +39,7 @@ export default defineConfig({
 				{
 					label: 'Dataset',
 					items: [
-						{ label: 'Home', link: './dataset/introduction' },
+						{ label: 'Introduction', link: './dataset/introduction' },
 						{ label: 'NAIP', link: './dataset/naip' },
 						{ label: 'SPOT', link: './dataset/spot' },
 						{ label: 'venµs', link: './dataset/venµs' },
