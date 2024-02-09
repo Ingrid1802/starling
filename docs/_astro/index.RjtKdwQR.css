@@ -1434,7 +1434,7 @@ h1:where(.astro-jbfsktt5) {
 }
 
 .sl-markdown-content :not(h1, h2, h3, h4, h5, h6)+:is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-bottom: 0.5em
 }
 
