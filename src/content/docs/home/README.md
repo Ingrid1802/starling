@@ -4,7 +4,7 @@ title:  home
 
 <p align="center">
   <a href="https://github.com/ESAOpenSR/opensr-test">
-    <img src="../../imgs/images_opensrtest/logo_opensrtest.png" alt="header" width="55%">
+    <img src="../../imgs/images_opensrtest/logoo_opensrtest.png" alt="header" width="55%">
   </a>
 </p>
 
@@ -89,19 +89,18 @@ Install the latest dev version from GitHub by running:
 pip install git+https://github.com/ESAOpenSR/opensr-test
 ```
 
-## Examples 
+## Examples
 
 The following examples show how to use `opensr-test` to benchmark your SR model.
 
-- Use `opensr-test` with a custom SR TensorFlow model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cAGDGlj5Kqt343inNni3ByLE1856z0gE#scrollTo=xaivkcD5Zfw1&uniqifier=1)
+| Example | Link |
+| ------- | ---- |
+| Use `opensr-test` with a custom SR TensorFlow model | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cAGDGlj5Kqt343inNni3ByLE1856z0gE#scrollTo=xaivkcD5Zfw1&uniqifier=1) |
+| Use `opensr-test` with a custom PyTorch model | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Db8-JSMTF-hNZQv2UyBDclxkO5hgP9VR#scrollTo=jVL7o6yOrJkY) |
+| Use `opensr-test` with a diffuser model | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1banDovG43c2OBh9MODPN4OXgaSCXu1Dc#scrollTo=zz4Aw7_52ulT) |
+| Use `opensr-test` to test a multi-image SR model (Satlas Super Resolution) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OlrYome8gcBH6Wu3SQhaw6mSlr2apWdV?usp=sharing#scrollTo=NOk0G3-BWonm) |
+| Use `opensr-test` to create an animated GIF of the SR correctness | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pixF3QLDjkwi6Li2ENpty_6857LXkYIx?usp=sharing) |
 
-- Use `opensr-test` with a custom PyTorch model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Db8-JSMTF-hNZQv2UyBDclxkO5hgP9VR#scrollTo=jVL7o6yOrJkY)
-
-- Use `opensr-test` with a diffuser model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1banDovG43c2OBh9MODPN4OXgaSCXu1Dc#scrollTo=zz4Aw7_52ulT)
-
-- Use `opensr-test` to test a multi-image SR model (Satlas Super Resolution) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OlrYome8gcBH6Wu3SQhaw6mSlr2apWdV?usp=sharing#scrollTo=NOk0G3-BWonm)
-
-- Use `opensr-test` to create a animated GIF of the SR correctness [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pixF3QLDjkwi6Li2ENpty_6857LXkYIx?usp=sharing)
 
 ## Visualizations 
 
