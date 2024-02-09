@@ -4,7 +4,7 @@ title:  home
 
 <p align="center">
   <a href="https://github.com/ESAOpenSR/opensr-test">
-    <img src="/src/assets/images/logo_opensrtest.png" alt="header" width="55%">
+    <img src="../imgs/images_opensrtest/logo_opensrtest.png" alt="header" width="55%">
   </a>
 </p>
 
@@ -141,7 +141,7 @@ metrics.plot_triplets()
 ```
 
 <p align="center">
-  <img src="/src/assets/images/example01.png" width="100%">
+  <img src="../imgs/images_opensrtest/example01.png" width="100%">
 </p>
 
 
@@ -153,7 +153,7 @@ metrics.plot_quadruplets()
 ```
 
 <p align="center">
-  <img src="/src/assets/images/example02.png" width="100%">
+  <img src="../imgs/images_opensrtest/example02.png" width="100%">
 </p>
 
 
@@ -165,7 +165,7 @@ metrics.plot_spatial_matches()
 ```
 
 <p align="center">
-  <img src="/src/assets/images/example03.png" width="70%">
+  <img src="../imgs/images_opensrtest/example03.png" width="70%">
 </p>
 
 
@@ -180,7 +180,7 @@ metrics.plot_pixel_summary()
 ```
 
 <p align="center">
-  <img src="/src/assets/images/example04.png" width="100%">
+  <img src="../imgs/images_opensrtest/example04.png" width="100%">
 </p>
 
 
@@ -192,7 +192,7 @@ metrics.plot_tc()
 ```
 
 <p align="center">
-  <img src="/src/assets/images/example05.png" width="100%">
+  <img src="../imgs/images_opensrtest/example05.png" width="100%">
 </p>
 
 
@@ -201,7 +201,7 @@ metrics.plot_tc()
 Explore the [API](/docs/API/model_parameters.md) section for more details about personalizing your benchmark experiments.
 
 <p align="center">
-    <a href="/docs/api.md"><img src="/src/assets/images/image02.png" alt="opensr-test" width="30%"></a>
+    <a href="/docs/api.md"><img src="../imgs/images_opensrtest/image02.png" alt="opensr-test" width="30%"></a>
 </p>
 
 ## Citation 
@@ -217,7 +217,7 @@ Coming soon!
 This work was make with the support of the European Space Agency (ESA) under the project “Explainable AI: application to trustworthy super-resolution (OpenSR)”. Cesar Aybar acknowledges support by the National Council of Science, Technology, and Technological Innovation (CONCYTEC, Peru) through the “PROYECTOS DE INVESTIGACIÓN BÁSICA – 2023-01” program with contract number PE501083135-2023-PROCIENCIA.
 
 <center>
-    <a href=""><img src="/src/assets/images/logo-adc.png" alt="opensr-test" width="40%"></a>    
+    <a href=""><img src="../imgs/images_opensrtest/logo-adc.png" alt="opensr-test" width="40%"></a>    
 </center>
 
 
