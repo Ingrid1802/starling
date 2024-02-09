@@ -13,7 +13,7 @@ $H = d_{im} + d_{om} - 1$
 $Improvement = d_{im} + d_{om}*(1 - e^{-\gamma H})$
 
 <p align="center">
-  <img src="../imgs/images_opensrtest/improvement.png" alt="correctness_metric" width="100%">
+  <img src="../../imgs/images_opensrtest/improvement.png" alt="correctness_metric" width="100%">
 </p>
 
 Where:
