@@ -1,6 +1,5 @@
 ---
 title: Consistency metrics
-layout: ../../../components/Layout.astro
 ---
 
 
