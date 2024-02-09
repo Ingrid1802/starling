@@ -15,7 +15,7 @@ export default defineConfig({
 				{
 					label: 'Home',
 					items: [
-						{ label: 'Home', link: './home/README' },
+						{ label: 'README', link: './home/readme' },
 						{ label: 'Contributing', link: './home/contributing' },
 						{ label: 'Code of Conduct', link: './home/code_of_conduct' },
 						{ label: 'Changelog', link: './home/changelog' },
