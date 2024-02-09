@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>home | OpenSR test</title>
 	<link rel="canonical" />
-	<link rel="shortcut icon" href="/starling/favicon.svg" type="image/svg+xml" />
 	<meta name="generator" content="Astro v4.2.4" />
 	<meta name="generator" content="Starlight v0.16.0" />
 	<meta property="og:title" content="home" />
@@ -58,7 +57,7 @@
 				d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z" />
 		</svg> </template>
 	<link rel="stylesheet" href="/starling/_astro/index.RjtKdwQR.css" />
-	<script type="module" src="/starling/_astro/hoisted.t_XPY1dV.js"></script>
+	<script type="module" src="/starling/_astro/hoisted.-fMsR05M.js"></script>
 	<script type="module" src="/starling/_astro/page.X_0NJa-z.js"></script>
 </head>
 
@@ -67,7 +66,10 @@
 		<header class="header astro-vrdttmbt">
 			<div class="header sl-flex astro-kmkmnagf">
 				<div class="sl-flex astro-kmkmnagf"> <a href="/starling/home/readme/" class="site-title sl-flex astro-m46x6ez3">
-						<span class="astro-m46x6ez3"> OpenSR test </span> </a> </div>
+						<!-- Aquí agregas tu imagen justo antes del texto del título --> <img
+							src="./src/imgs/images_opensrtest/logoo_opensrtest.png" alt="Logo OpenSR"
+							style="width: 30px; height: auto; margin-right: 10px;" class="astro-m46x6ez3"> <span
+							class="astro-m46x6ez3">OpenSR test</span> </a> </div>
 				<div class="sl-flex astro-kmkmnagf"> <site-search data-translations="{&#34;placeholder&#34;:&#34;Search&#34;}"
 						class="astro-v37mnknz"> <button data-open-modal disabled class="astro-v37mnknz"> <svg aria-label="Search"
 								class="astro-v37mnknz astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
@@ -297,9 +299,6 @@
 										</summary>
 										<div class="dropdown astro-doynk5tl">
 											<ul class="isMobile astro-g2bywc46" style="--depth: 0;">
-												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46"
-														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>
-												</li>
 												<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#overview" class="astro-g2bywc46"
 														style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>
 												</li>
@@ -334,6 +333,9 @@
 									<nav aria-labelledby="starlight__on-this-page">
 										<h2 id="starlight__on-this-page">On this page</h2>
 										<ul class="astro-g2bywc46" style="--depth: 0;">
+											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#_top" class="astro-g2bywc46"
+													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>
+											</li>
 											<li class="astro-g2bywc46" style="--depth: 0;"> <a href="#overview" class="astro-g2bywc46"
 													style="--depth: 0;"> <span class="astro-g2bywc46" style="--depth: 0;">Overview</span> </a>
 											</li>
@@ -367,13 +369,11 @@
 				<div class="main-pane astro-67yu43on">
 					<main data-pagefind-body lang="en" dir="ltr" class="astro-bguv2lll">
 						<div class="content-panel astro-7nkwcw3z">
-						</div>
-						<div class="content-panel astro-7nkwcw3z">
 							<div class="sl-container astro-7nkwcw3z">
 								<div class="sl-markdown-content">
 									<p align="center">
 										<a href="https://github.com/ESAOpenSR/opensr-test">
-											<img src="../../imgs/images_opensrtest/logo_opensrtest.png" alt="header" width="55%">
+											<img src="../../imgs/images_opensrtest/logoo_opensrtest.png" alt="header" width="55%">
 										</a>
 									</p>
 									<p align="center">
@@ -481,34 +481,81 @@
 									<h2 id="examples">Examples</h2>
 									<p>The following examples show how to use <code dir="auto">opensr-test</code> to benchmark your SR
 										model.</p>
-									<ul>
-										<li>
-											<p>Use <code dir="auto">opensr-test</code> with a custom SR TensorFlow model <a
-													href="https://colab.research.google.com/drive/1cAGDGlj5Kqt343inNni3ByLE1856z0gE#scrollTo=xaivkcD5Zfw1&#x26;uniqifier=1"><img
-														src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-										</li>
-										<li>
-											<p>Use <code dir="auto">opensr-test</code> with a custom PyTorch model <a
-													href="https://colab.research.google.com/drive/1Db8-JSMTF-hNZQv2UyBDclxkO5hgP9VR#scrollTo=jVL7o6yOrJkY"><img
-														src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-										</li>
-										<li>
-											<p>Use <code dir="auto">opensr-test</code> with a diffuser model <a
-													href="https://colab.research.google.com/drive/1banDovG43c2OBh9MODPN4OXgaSCXu1Dc#scrollTo=zz4Aw7_52ulT"><img
-														src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-										</li>
-										<li>
-											<p>Use <code dir="auto">opensr-test</code> to test a multi-image SR model (Satlas Super
-												Resolution) <a
-													href="https://colab.research.google.com/drive/1OlrYome8gcBH6Wu3SQhaw6mSlr2apWdV?usp=sharing#scrollTo=NOk0G3-BWonm"><img
-														src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-										</li>
-										<li>
-											<p>Use <code dir="auto">opensr-test</code> to create a animated GIF of the SR correctness <a
-													href="https://colab.research.google.com/drive/1pixF3QLDjkwi6Li2ENpty_6857LXkYIx?usp=sharing"><img
-														src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-										</li>
-									</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<table>
+										<thead>
+											<tr>
+												<th>Example</th>
+												<th>Link</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Use <code dir="auto">opensr-test</code> with a custom SR TensorFlow model</td>
+												<td><a
+														href="https://colab.research.google.com/drive/1cAGDGlj5Kqt343inNni3ByLE1856z0gE#scrollTo=xaivkcD5Zfw1&#x26;uniqifier=1"><img
+															src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+												</td>
+											</tr>
+											<tr>
+												<td>Use <code dir="auto">opensr-test</code> with a custom PyTorch model</td>
+												<td><a
+														href="https://colab.research.google.com/drive/1Db8-JSMTF-hNZQv2UyBDclxkO5hgP9VR#scrollTo=jVL7o6yOrJkY"><img
+															src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+												</td>
+											</tr>
+											<tr>
+												<td>Use <code dir="auto">opensr-test</code> with a diffuser model</td>
+												<td><a
+														href="https://colab.research.google.com/drive/1banDovG43c2OBh9MODPN4OXgaSCXu1Dc#scrollTo=zz4Aw7_52ulT"><img
+															src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+												</td>
+											</tr>
+											<tr>
+												<td>Use <code dir="auto">opensr-test</code> to test a multi-image SR model (Satlas Super
+													Resolution)</td>
+												<td><a
+														href="https://colab.research.google.com/drive/1OlrYome8gcBH6Wu3SQhaw6mSlr2apWdV?usp=sharing#scrollTo=NOk0G3-BWonm"><img
+															src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+												</td>
+											</tr>
+											<tr>
+												<td>Use <code dir="auto">opensr-test</code> to create an animated GIF of the SR correctness</td>
+												<td><a
+														href="https://colab.research.google.com/drive/1pixF3QLDjkwi6Li2ENpty_6857LXkYIx?usp=sharing"><img
+															src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 									<h2 id="visualizations">Visualizations</h2>
 									<p>The <code dir="auto">opensr-test</code> package provides a set of visualizations to help you
 										understand the performance of your SR model.</p>
