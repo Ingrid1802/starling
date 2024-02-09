@@ -1,6 +1,6 @@
 ---
 title: The correctness metrics
-layout: ../../components/Layout.astro
+layout: ../../../components/Layout.astro
 ---
 
 
