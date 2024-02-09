@@ -191,7 +191,8 @@ h4,
 h5,
 h6,
 code {
-  overflow-wrap: anywhere
+  margin-top: 10px;
+  overflow-wrap: anywhere;
 }
 
 code {
@@ -1433,7 +1434,8 @@ h1:where(.astro-jbfsktt5) {
 }
 
 .sl-markdown-content :not(h1, h2, h3, h4, h5, h6)+:is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
-  margin-top: 1.5em
+  margin-top: 1em;
+  margin-bottom: 0.5em
 }
 
 .sl-markdown-content li+li:not(:where(.not-content *)),
@@ -1462,7 +1464,6 @@ h1:where(.astro-jbfsktt5) {
 }
 
 .sl-markdown-content :is(img, picture, video, canvas, svg, iframe):not(:where(.not-content *)) {
-  display: block;
   max-width: 100%;
   height: auto
 }
