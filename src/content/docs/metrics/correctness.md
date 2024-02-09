@@ -26,7 +26,7 @@ The correctness metrics evaluate the quality of high-frequency information intro
 <p style="margin-bottom: 20px;">\(Omission = d_{om} + d_{im} \cdot (1 - e^{-\gamma H})\)</p>
 
 <p align="center">
-  <img src="../imgs/images_opensrtest/omission.png" alt="correctness_metric" width="100%">
+  <img src="../../imgs/images_opensrtest/omission.png" alt="correctness_metric" width="100%">
 </p>
 
 **Hallucination**: Low values shows the areas where the SR model has introduced high-frequency information that is not present in the HR image. The equation for calculating hallucination is:
@@ -35,5 +35,5 @@ The correctness metrics evaluate the quality of high-frequency information intro
 										d_{im}}\)</p>
 
 <p align="center">
-  <img src="../imgs/images_opensrtest/hallucination.png" alt="correctness_metric" width="100%">
+  <img src="../../imgs/images_opensrtest/hallucination.png" alt="correctness_metric" width="100%">
 </p>
